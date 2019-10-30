@@ -12,7 +12,7 @@ location-based service providing information about a campus to users
 -----------------------------
 ## DEV ISSUES
 ### BACKEND: Django
-- before migration, should create 'database' first. 
-  `mysql> CREATE DATABASE 'mapus';`
+- before migration, should create 'database' first 
+  <br>`mysql> CREATE DATABASE 'mapus';`
 - to renew the password of 'root' account, use the command below (https://wickedmagic.tistory.com/315)
-  `GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY '비밀번호' WITH GRANT OPTION;`
+  <br>`GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY '비밀번호' WITH GRANT OPTION;`
