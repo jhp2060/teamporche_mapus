@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 from account.models import Pin
-from campus_map.models import Campus
 
 User = get_user_model()
 
@@ -12,7 +11,7 @@ class Building(models.Model):
         verbose_name="건물명",
     )
     campus = models.ForeignKey(
-        Campus,
+        'campus_map.Campus',
         on_delete=models.CASCADE,
     )
     upper_latitude = models.FloatField()
@@ -48,4 +47,5 @@ class Facility (Pin):
         on_delete=models.SET_NULL,
         #on_delete=models.SET_DEFAULT,
         # default=
+        null=True,
     )

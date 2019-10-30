@@ -31,9 +31,9 @@ AUTH_USER_MODEL = "account.User"
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
-    'building_map.apps.BuildingMapConfig',
-    'campus_map.apps.CampusMapConfig',
+    'account',
+    'building_map',
+    'campus_map',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,7 +88,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
