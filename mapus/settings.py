@@ -26,7 +26,7 @@ SECRET_KEY = 'es5-ulx63zr$qlrl2jz=syfdex(%4v*08ql(ofkl9)sqay)dxn'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-AUTH_USER_MODEL = "account.User"
+#AUTH_USER_MODEL = "account.User"
 
 # Application definition
 
@@ -80,12 +80,8 @@ WSGI_APPLICATION = 'mapus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mapus',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
