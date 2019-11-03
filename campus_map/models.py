@@ -5,4 +5,5 @@ class Campus(models.Model):
         'account.University',
         on_delete=models.CASCADE,
     )
-
+    class Meta:
+        verbose_name_plural="Campuses"
