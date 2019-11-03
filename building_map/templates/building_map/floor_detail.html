@@ -7,8 +7,11 @@
             <p>이 건물의 위도는 {{ floor.building.upper_latitude }}부터 {{ floor.building.lower_latitude }}까지 입니다.</p>
             <p>이 건물의 경도는 {{ floor.building.left_longitude }}부터 {{ floor.building.right_longitude }}까지 입니다.</p>
             {% for f in floor.facility_set.all.filter %}
-                <p>{{ f.type }}</p>
-                <p>{{ f.pin.latitude }}</p>
+                <br>
+                <p>{{ f.type }}의</p>
+                <p>위도는 {{ f.latitude }} 이고,</p>
+                <p>경도는 {{ f.longiitude }}입니다.</p>
+                <br>
             {% endfor %}
         </div>
     </div>

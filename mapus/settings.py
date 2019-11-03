@@ -26,7 +26,7 @@ SECRET_KEY = 'es5-ulx63zr$qlrl2jz=syfdex(%4v*08ql(ofkl9)sqay)dxn'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-#AUTH_USER_MODEL = "account.User"
+AUTH_USER_MODEL = "account.User"
 
 # Application definition
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'account',
     'building_map',
     'campus_map',
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,6 +84,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'mapus',
+    #     'USER': 'root',
+    #     'PASSWORD': '1234',
+    #     'HOST': 'localhost',
+    #     'PORT': "3306",
+    # }
 }
 
 # Password validation

@@ -1,19 +1,31 @@
 from django.shortcuts import render
-from django.views import generic
+from rest_framework import generics, viewsets
 
+from building_map.serializers import FloorSerializer, FacilitySerializer
 from .models import Floor, Facility, Building
 
+class FloorViewSet(viewsets.ModelViewSet):
+    queryset = Floor.objects.all()
+    serializer_class = FloorSerializer
 
-class BuildingDetailView(generic.DetailView):
-    model = Building
-    
+class FacilityViewSet(viewsets.ModelViewSet):
+    queryset = Facility.objects.all()
+    serializer_class = FacilitySerializer
 
-class FloorDetailView(generic.DetailView):
-    model = Floor
-    context_object_name = 'floor'
+'''
+class Test(generics.ListAPIView):
+    queryset = Facility.objects.all()
+    serializer_class = FacilitySerializer
 
-class FloorListView(generic.ListView):
-    model = Floor
-    context_object_name = 'floor_list'
+    def filter_queryset(self, queryset):
 
+    def get(self, request, *args, **kwargs):
+        params = request.data
+        params['key']
 
+        obj = self.get_object()
+        serializer = self.get_serializer()
+        serializer(obj, params)
+        if serializer.is_valid():
+            return Response(serializer.data, status=status.HTTP_200_OK)
+'''
