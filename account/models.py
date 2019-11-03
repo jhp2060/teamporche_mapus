@@ -19,6 +19,7 @@ class User(AbstractUser):
         ordering=["username"]
         verbose_name_plural="Users"
 
+
 class University(models.Model):
     name = models.CharField(
         max_length=200,

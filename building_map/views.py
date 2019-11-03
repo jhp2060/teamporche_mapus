@@ -1,16 +1,18 @@
 from django.shortcuts import render
-from rest_framework import generics, viewsets
+from rest_framework import generics
 
-from building_map.serializers import FloorSerializer, FacilitySerializer
+from building_map.serializers import FloorSerializer, BuildingSerializer
 from .models import Floor, Facility, Building
 
-class FloorViewSet(viewsets.ModelViewSet):
+
+class FloorDetailView(generics.RetrieveAPIView):
     queryset = Floor.objects.all()
     serializer_class = FloorSerializer
 
-class FacilityViewSet(viewsets.ModelViewSet):
-    queryset = Facility.objects.all()
-    serializer_class = FacilitySerializer
+
+class BuildingDetailView(generics.RetrieveAPIView):
+    queryset = Building.objects.all()
+    serializer_class = BuildingSerializer
 
 '''
 class Test(generics.ListAPIView):
@@ -24,8 +26,7 @@ class Test(generics.ListAPIView):
         params['key']
 
         obj = self.get_object()
-        serializer = self.get_serializer()
-        serializer(obj, params)
+        serializer = self.get_serializer(obj, params)
         if serializer.is_valid():
             return Response(serializer.data, status=status.HTTP_200_OK)
 '''

@@ -29,9 +29,12 @@ class Floor(models.Model):
     building = models.ForeignKey(
         Building,
         on_delete=models.CASCADE,
+        related_name='floors',
     )
-    map_img = models.ImageField(
-        blank=True,
+    map_image = models.ImageField(
+        upload_to='media/building_map/',
+        default='default_map.png'
+
     )
 
     class Meta:
@@ -45,13 +48,24 @@ class Floor(models.Model):
 
 
 class Facility(models.Model):
+    TYPE_CHOICES = (
+        ('JS', '정수기'),
+        ('IS', '인쇄기'),
+        ('SH', '소화기'),
+        ('HJ', '화장실'),
+        ('SM', '수면실'),
+        ('SS', '샤워실'),
+    )
     type = models.CharField(
-        max_length=200,
+        max_length=2,
+        choices=TYPE_CHOICES,
+        default=None,
     )
     floor = models.ForeignKey(
         Floor,
         on_delete=models.CASCADE,
         default=None,
+        related_name='facilities',
     )
     latitude = models.FloatField()
     longitude = models.FloatField()
@@ -67,3 +81,8 @@ class Facility(models.Model):
 
     class Meta:
         verbose_name_plural="Facilities"
+
+    def __str__(self):
+        return "facility " + self.pk + " : " + self.type \
+               + " at floor " +  str(self.floor.number) \
+               + " " + self.floor.building.name

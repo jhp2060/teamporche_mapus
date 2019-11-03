@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
@@ -7,9 +9,7 @@ from .views import *
 
 app_name = 'building_map'
 
-router = routers.DefaultRouter()
-router.register('facilities', FacilityViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
+    path('floor/<int:pk>/', FloorDetailView.as_view()),
+    path('building/<int:pk>/', BuildingDetailView.as_view()),
 ]
