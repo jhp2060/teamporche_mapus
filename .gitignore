@@ -1,4 +1,6 @@
-.idea
+/static
+*.xlsx
+/.idea/workspace.xml
 db.sqlite3
 account/migrations
 building_map/migrations
