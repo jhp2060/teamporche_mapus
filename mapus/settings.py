@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': 'mapus',
         'USER': 'root',
         'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': "5432",
+        'HOST': '0.0.0.0',
+        'PORT': "8000",
     }
 }
 
