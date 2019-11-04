@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dbef089-bc35-44f6-a879-8698191edd63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4dbef089-bc35-44f6-a879-8698191edd63" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,8 +133,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="453">
+              <caret line="107" selection-start-line="106" selection-end-line="107" />
             </state>
           </provider>
         </entry>
@@ -390,15 +387,16 @@
       <workItem from="1572673105991" duration="15948000" />
       <workItem from="1572761411767" duration="3693000" />
       <workItem from="1572765956271" duration="8198000" />
-      <workItem from="1572864417714" duration="9033000" />
+      <workItem from="1572864417714" duration="9206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67650000" />
+    <option name="totallyTimeSpent" value="67823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24835886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -894,8 +892,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        <state relative-caret-position="453">
+          <caret line="107" selection-start-line="106" selection-end-line="107" />
         </state>
       </provider>
     </entry>
