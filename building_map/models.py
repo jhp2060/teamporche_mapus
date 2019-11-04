@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 User = get_user_model()
@@ -67,8 +68,14 @@ class Facility(models.Model):
         default=None,
         related_name='facilities',
     )
-    latitude = models.FloatField()
-    longitude = models.FloatField()
+    latitude = models.FloatField(
+        # validators = [MinValueValidator(floor.building.upper_latitude),
+        #               MaxValueValidator(floor.building.lower_latitude)],
+    )
+    longitude = models.FloatField(
+        # validators = [MinValueValidator(floor.building.left_longitude),
+        #               MaxValueValidator(floor.building.right_longitude)],
+    )
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
     created_by = models.ForeignKey(
@@ -76,6 +83,7 @@ class Facility(models.Model):
         on_delete=models.SET_NULL,
         default=None,
         null=True,
+        blank=True,
     )
     description = models.TextField(max_length=1000)
 
@@ -83,6 +91,6 @@ class Facility(models.Model):
         verbose_name_plural="Facilities"
 
     def __str__(self):
-        return "facility " + self.pk + " : " + self.type \
+        return "facility " + str(self.pk) + " : " + self.type \
                + " at floor " +  str(self.floor.number) \
                + " " + self.floor.building.name

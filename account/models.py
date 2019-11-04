@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -6,15 +7,20 @@ class User(AbstractUser):
         'account.University',
         on_delete=models.SET_NULL,
         null=True,
+        blank=True,
         default=None,
     )
     friends = models.ManyToManyField(
         'self',
+        blank=True,
         default=None,
     )
     latitude = models.FloatField(default=-1)
     longitude = models.FloatField(default=-1)
-    school_year = models.IntegerField(default=-1)
+    school_year = models.IntegerField(
+        default=1,
+        validators=[MinValueValidator(1)],
+    )
     class Meta:
         ordering=["username"]
         verbose_name_plural="Users"
