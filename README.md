@@ -38,6 +38,7 @@ location-based service providing information about a campus to users
 
 
 ### others
-- archive virtual environment : make requirements.txt file and update it
+- update virtual environment with requirements.txt
+    <br> `pip install -r requirements.txt`
+- archive virtual environment. make requirements.txt file and update it
     <br>`pip freeze > requirements.txt`
-    
