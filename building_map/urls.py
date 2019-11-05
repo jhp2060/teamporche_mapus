@@ -11,5 +11,6 @@ app_name = 'building_map'
 
 urlpatterns = [
     path('floor/<int:pk>/', FloorDetailView.as_view()),
-    path('building/<int:pk>/', BuildingDetailView.as_view()),
+    path('building/<int:pk>/floor/<int:floor_number>', BuildingFloorDetailView.as_view()),
+    path('building/<int:pk>/floor/<int:floor_number>/facility/<str:facility_type>', BuildingFloorFacilityListView.as_view()),
 ]

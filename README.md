@@ -31,11 +31,12 @@ location-based service providing information about a campus to users
     <br>`pyenv activate [virtual environment name _ex.proudction]`
     <br>
 - move directory to 'srv' and clone the codes from remote repository like github
-    <br> `cd src`
+    <br> `cd srv`
     <br> `git clone [github repository address]`
 - do runserver with port 8000
     <br> `python manage.py runserver 0.0.0.0:8000`
-
+- must open port of DBMS(ex. Postgres-5432) with security group in rds
+- can access the database with client tool. For postgres, we can use pgadmin4 which was installed automatically with postgres and should register the rds server with endpoint address of rds.
 
 ### others
 - update virtual environment with requirements.txt

@@ -6,7 +6,15 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic import FormView, RedirectView
+from rest_framework import generics
 
+from account.models import University
+from account.serializers import UniversitySerializer
+
+
+class UniversityDetailView(generics.RetrieveAPIView):
+    queryset = University.objects.all()
+    serializer_class = UniversitySerializer
 
 class LoginView(FormView):
     form_class = AuthenticationForm
@@ -39,3 +47,4 @@ class LogoutView(RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return super(LogoutView, self).get(request, *args, **kwargs)
+

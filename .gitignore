@@ -2,6 +2,7 @@ mapus/secrets.json
 .idea/
 .idea/*
 mapus/settings_prod.py
+mapus/settings/__init__.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
