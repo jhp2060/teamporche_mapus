@@ -33,7 +33,7 @@ class Floor(models.Model):
         related_name='floors',
     )
     map_image = models.ImageField(
-        upload_to='media/building_map/',
+        upload_to='building_map/',
         default='default_map.png'
 
     )
@@ -43,19 +43,18 @@ class Floor(models.Model):
         verbose_name_plural="Floors"
 
     def __str__(self):
-        return self.building.university.name \
-               + " University : floor " + str(self.number) \
-               + " of " + self.building.name
+        return self.building.university.name + " " + self.building.name \
+               + " " + str(self.number) + "층"
 
 
 class Facility(models.Model):
     TYPE_CHOICES = (
-        ('JS', '정수기'),
-        ('IS', '인쇄기'),
-        ('SH', '소화기'),
-        ('HJ', '화장실'),
-        ('SM', '수면실'),
-        ('SS', '샤워실'),
+        ('JSG', '정수기'),
+        ('ISG', '인쇄기'),
+        ('SHG', '소화기'),
+        ('HJS', '화장실'),
+        ('SMS', '수면실'),
+        ('SWS', '샤워실'),
     )
     type = models.CharField(
         max_length=2,
@@ -91,6 +90,7 @@ class Facility(models.Model):
         verbose_name_plural="Facilities"
 
     def __str__(self):
-        return "facility " + str(self.pk) + " : " + self.type \
-               + " at floor " +  str(self.floor.number) \
-               + " " + self.floor.building.name
+        return "facility #" + str(self.pk) \
+               + " : " + self.type + " (" + self.floor.building.university.name \
+               + " " + self.floor.building.name + " " \
+               + str(self.floor.number) + " 층"
