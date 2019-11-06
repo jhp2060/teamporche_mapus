@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
             name='Facility',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(max_length=200)),
+                ('facility_type', models.CharField(max_length=200)),
                 ('latitude', models.FloatField()),
                 ('longitude', models.FloatField()),
                 ('created_at', models.DateTimeField()),

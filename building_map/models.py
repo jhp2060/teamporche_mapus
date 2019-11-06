@@ -57,7 +57,7 @@ class Facility(models.Model):
         ("ATM", "ATM"),
         ("TABLE", "TABLE"),
     )
-    type = models.CharField(
+    facility_type = models.CharField(
         max_length=20,
         choices=TYPE_CHOICES,
         default=None,
@@ -101,6 +101,6 @@ class Facility(models.Model):
 
     def __str__(self):
         return "facility #" + str(self.pk) \
-               + " : " + self.type + " (" + self.floor.building.university.name \
+               + " : " + self.facility_type + " (" + self.floor.building.university.name \
                + " " + self.floor.building.name + " " \
                + str(self.floor.number) + "층)"

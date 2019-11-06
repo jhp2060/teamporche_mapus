@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='facility',
-            name='type',
+            name='facility_type',
             field=models.CharField(choices=[('정수기', '정수기'), ('인쇄기', '인쇄기'), ('소화기', '소화기'), ('화장실', '화장실'), ('수면실', '수면실'), ('샤워실', '샤워실')], default=None, max_length=3),
         ),
     ]

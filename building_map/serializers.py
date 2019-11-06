@@ -11,14 +11,13 @@ class FacilitySerializer(serializers.ModelSerializer):
 class FloorSerializer(serializers.ModelSerializer):
     # nested serializer : 실존하는 필드명만 사용할 것
     # facilities = serializers.SerializerMethodField()
-    # map_image = serializers.ImageField(use_url=True)
 
     class Meta:
         model = Floor
         fields = '__all__'
 
     # def get_facilities(self, instance):
-    #     sorted_facilities = instance.facilities.all().order_by('type')
+    #     sorted_facilities = instance.facilities.all().order_by('facility_type')
     #     return FacilitySerializer(sorted_facilities, many=True).data
 
 

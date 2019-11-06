@@ -26,14 +26,9 @@ class BuildingFloorDetailView(generics.RetrieveAPIView):
         if floor_number is None:
             return Response(data={'error': 'url invalid'},
                             status=status.HTTP_404_NOT_FOUND)
-        # queryset = self.get_queryset()
         building = self.get_object()
         floor = building.floors.get(number=floor_number)
-        fs = FloorSerializer(floor)
-        # if fs.is_valid(raise_exception=True):
-        #   fs.validated_data
-        # else :
-        #   fs.errors
+        fs = FloorSerializer(floor, context=self.get_serializer_context())
         return Response(fs.data, status=status.HTTP_200_OK)
 
 class BuildingFloorFacilityListView(generics.ListAPIView):
@@ -48,14 +43,13 @@ class BuildingFloorFacilityListView(generics.ListAPIView):
                             status=status.HTTP_404_NOT_FOUND)
         building = self.get_object()
         floor = building.floors.get(number=floor_number)
-        facilities = floor.facilities.get(type=facility_type)
-        fs = FacilitySerializer(facilities)
+        facilities = floor.facilities.filter(facility_type=facility_type)
+        fs = FacilitySerializer(facilities, many=True)
         return Response(fs.data, status=status.HTTP_200_OK)
 
 
 '''
-class Test(generics.ListAPIView):
-    queryset = Facility.objects.all()
+sc    queryset = Facility.objects.all()
     serializer_class = FacilitySerializer
 
     def filter_queryset(self, queryset):

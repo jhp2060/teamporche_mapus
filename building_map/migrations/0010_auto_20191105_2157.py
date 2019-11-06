@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='facility',
-            name='type',
+            name='facility_type',
             field=models.CharField(choices=[('JSG', '정수기'), ('ISG', '인쇄기'), ('SHG', '소화기'), ('HJS', '화장실'), ('SMS', '수면실'), ('SWS', '샤워실')], default=None, max_length=3),
         ),
         migrations.AlterField(

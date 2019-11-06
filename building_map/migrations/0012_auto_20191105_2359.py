@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='facility',
-            name='type',
+            name='facility_type',
             field=models.CharField(choices=[('PRINTER', 'PRINTER'), ('CONSENT', 'CONSENT'), ('TOILET', 'TOILET'), ('LOCKER', 'LOCKER'), ('ATM', 'ATM'), ('TABLE', 'TABLE')], default=None, max_length=20),
         ),
     ]
